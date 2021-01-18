@@ -1,9 +1,17 @@
 <template>
   <div>
+    <navbar/>
     <nuxt/>
   </div>
 </template>
-
+<script>
+import Navbar from '~/components/shared/Navbar';
+export default {
+  components:{
+    Navbar
+  }
+}
+</script>
 <style>
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',

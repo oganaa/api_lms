@@ -85,4 +85,37 @@ exports.getUserRole = async(req, res, next) => {
         res.status(400).send({ message: `${err.message} ` })
     }
 }
+exports.login = async(req, res, next) => {
+    try {
+        const { email, password } = req.body
+        if (!email) {
+            return res.status(422).json({
+              errors: {
+                email: 'is required',
+                message: 'Email is required'
+              }
+            })
+          }
+        
+          if (!password) {
+            return res.status(422).json({
+              errors: {
+                password: 'is required',
+                message: 'Password is required'
+              }
+            })
+          }
+    //     let userAdd = await MODELS.users.create({
+    //       email:email,
+    //       password:hashedPassword,
+    //       role :role,
+    //   })
+        //delete userAdd["password"];
+        res.status(200).send(
+            req.body
+        )
+      } catch (err) {
+        res.status(400).send({ message: err.message })
+      }
+}
 
