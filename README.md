@@ -68,3 +68,6 @@ An action contains business logic and it does not care about updating the state 
 - https://vuex.vuejs.org/guide/state.html
 - https://nuxtjs.org/guide/vuex-store
 - https://itnext.io/vuex-made-simple-getting-started-6bf229d432cf
+
+### create model
+ sequelize-auto -o "./server/models" -d lms -h 192.168.17.210 -u postgres -p 5432 -x StrongAdminP@ssw0rd -e postgres  

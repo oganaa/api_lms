@@ -3,13 +3,14 @@ const rootPath = path.normalize(__dirname + "/..");
 const env = process.env.NODE_ENV || "development";
 
 const config = {
+  host: '192.168.17.210',
   development: {
     root: rootPath,
     app: {
       name: "nuxt-express-template"
     },
     port: process.env.PORT || 3000,
-    db: "postgres://root:root@localhost:5432/nuxt-dev"
+    db: "postgres://postgres:StrongAdminP@ssw0rd@192.168.17.210:5432/lms"
   },
 
   test: {
@@ -18,7 +19,7 @@ const config = {
       name: "nuxt-express-template"
     },
     port: process.env.PORT || 3000,
-    db: "postgres://root:root@localhost:5432/nuxt-test"
+    db: "postgres://postgres:StrongAdminP@ssw0rd@192.168.17.210:5432/lms"
   },
 
   production: {
@@ -27,7 +28,7 @@ const config = {
       name: "nuxt-express-template"
     },
     port: process.env.PORT || 3000,
-    db: "postgres://root:root@localhost:5432/nuxt-prod"
+    db: "postgres://postgres:StrongAdminP@ssw0rd@192.168.17.210:5432/lms"
   }
 };
 

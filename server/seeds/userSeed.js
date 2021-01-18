@@ -1,6 +1,6 @@
 module.exports = {
     run: async () => {
-        let users = await MODELS.User.findAll()
+        let users = await MODELS.users.findAll()
         if (users.length == 0) {
             users = [
                 {
@@ -13,7 +13,7 @@ module.exports = {
                     role: "ADMIN"
                 }
             ];
-            await MODELS.User.bulkCreate(users)
+            await MODELS.users.bulkCreate(users)
         }
     }
 };
