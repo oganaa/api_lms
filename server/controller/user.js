@@ -65,4 +65,24 @@ exports.getUser = async(req, res, next) => {
         res.status(400).send({ message: `${err.message} ` })
     }
 }
+exports.getUserRole = async(req, res, next) => {
+    try {
+        let getUser = await MODELS.users.findByPk(req.params.id,{include:[
+            {
+                model:MODELS.role,
+               
+                through: {
+                    attributes: [],
+                }
+            }
+        ]});
+        
+        res.status(200).json({
+            success: true,
+            message: getUser,
+        })
+    } catch (err) {
+        res.status(400).send({ message: `${err.message} ` })
+    }
+}
 

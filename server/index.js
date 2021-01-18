@@ -17,7 +17,8 @@ app.use("/api", api);
 // Import and Set Nuxt.js options
 let config = require("../nuxt.config.js");
 config.dev = !(process.env.NODE_ENV === "production");
-
+MODELS.users.belongsToMany(MODELS.role, { through: MODELS.users_role,foreignKey:"user_id" } )
+MODELS.role.belongsToMany(MODELS.users, { through: MODELS.users_role ,foreignKey:"role_id" })
 async function start() {
   // Init Nuxt.js
   const nuxt = new Nuxt(config);
